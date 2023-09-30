@@ -16,6 +16,6 @@ public class TechnologicalAssetData extends AssetData {
     private String brand;
     private String location;
     private String detail;
-    private String warrantyDetail;
+    private String warranty;
     private Date expiresAt;
 }

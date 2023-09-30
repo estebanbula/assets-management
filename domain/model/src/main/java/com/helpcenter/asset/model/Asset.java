@@ -2,22 +2,23 @@ package com.helpcenter.asset.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
-
-@Data
-@NoArgsConstructor
+@Setter
+@Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder(toBuilder = true)
 public class Asset {
 
     private String assetId;
-    private String inChargeOf;
+    private String assignee;
     private Date acquiredAt;
-    private String billNumber;
+    private String bill;
     private String description;
     private String status;
 }

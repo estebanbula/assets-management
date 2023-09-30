@@ -1,6 +1,7 @@
 package com.helpcenter.api.services.asset;
 
 import com.helpcenter.asset.model.Asset;
+import com.helpcenter.asset.model.TechnologicalAsset;
 import com.helpcenter.usecase.asset.AssetUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,8 @@ public class AssetHandler {
     }
 
     public Mono<ServerResponse> addAsset(ServerRequest serverRequest) {
-        return ServerResponse.ok().build();
+        return serverRequest.bodyToMono(TechnologicalAsset.class)
+                .flatMap(assetUseCase::addAsset)
+                .flatMap(ServerResponse.status(HttpStatus.CREATED)::bodyValue);
     }
 }
