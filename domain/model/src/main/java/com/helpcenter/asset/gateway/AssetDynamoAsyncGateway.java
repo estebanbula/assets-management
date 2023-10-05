@@ -1,13 +1,14 @@
 package com.helpcenter.asset.gateway;
 
 import com.helpcenter.asset.model.Asset;
+import com.helpcenter.asset.model.TechnologicalAsset;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IAsset {
+public interface AssetDynamoAsyncGateway {
 
     Flux<Asset> retrieveAssets();
-    Mono<Asset> saveAsset(Asset asset);
+    Mono<Void> putAsset(TechnologicalAsset asset);
     Mono<Asset> updateAsset(String id, Asset asset);
     Mono<Void> deleteAsset(String id);
 }

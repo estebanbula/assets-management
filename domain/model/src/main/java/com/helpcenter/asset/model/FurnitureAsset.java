@@ -1,16 +1,13 @@
 package com.helpcenter.asset.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Setter
+import java.util.Date;
+
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 public class FurnitureAsset extends Asset {
 
     private String manufacturer;
@@ -18,4 +15,14 @@ public class FurnitureAsset extends Asset {
     private Integer quantity;
     private String detail;
     private String maintainer;
+
+    @Builder(builderMethodName = "furnitureAssetBuilder")
+    public FurnitureAsset(String assetId, String assignee, String acquiredAt, String bill, String description, String status, String manufacturer, String location, Integer quantity, String detail, String maintainer) {
+        super(assetId, assignee, acquiredAt, bill, description, status);
+        this.manufacturer = manufacturer;
+        this.location = location;
+        this.quantity = quantity;
+        this.detail = detail;
+        this.maintainer = maintainer;
+    }
 }

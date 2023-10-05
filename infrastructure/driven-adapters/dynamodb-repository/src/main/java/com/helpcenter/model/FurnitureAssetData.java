@@ -2,13 +2,13 @@ package com.helpcenter.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 
 @Data
+@DynamoDbBean
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Document(collection = "asset")
-@TypeAlias("furnitureAsset")
 public class FurnitureAssetData extends AssetData {
 
     private String manufacturer;

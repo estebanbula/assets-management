@@ -1,23 +1,30 @@
 package com.helpcenter.asset.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
 
-@Setter
 @Getter
-@AllArgsConstructor
+@Setter
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 public class TechnologicalAsset extends Asset {
 
     private String brand;
     private String location;
     private String detail;
     private String warranty;
-    private Date expiresAt;
+    private String expiresAt;
+
+    @Builder(builderMethodName = "technologicalAssetBuilder")
+    public TechnologicalAsset(String assetId, String assignee, String acquiredAt, String bill, String description, String status, String brand, String location, String detail, String warranty, String expiresAt) {
+        super(assetId, assignee, acquiredAt, bill, description, status);
+        this.brand = brand;
+        this.location = location;
+        this.detail = detail;
+        this.warranty = warranty;
+        this.expiresAt = expiresAt;
+    }
 }
