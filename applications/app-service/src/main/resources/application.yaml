@@ -7,9 +7,6 @@ spring:
     add-properties: false
   profiles:
     include: null
-  data:
-    mongodb:
-      uri: "${DATABASE_HOST}"
 management:
   endpoints:
     web:
@@ -19,6 +16,12 @@ management:
     health:
       probes:
         enabled: true
+adapters:
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 entries:
   reactive-web:
     path-base: "${PATH_BASE}"

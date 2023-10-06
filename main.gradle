@@ -18,14 +18,13 @@ subprojects {
     dependencies {
         implementation 'io.projectreactor:reactor-core'
         implementation 'io.projectreactor.addons:reactor-extra'
-        implementation 'org.modelmapper:modelmapper:2.3.0'
 
         testImplementation 'io.projectreactor.tools:blockhound-junit-platform:1.0.8.RELEASE'
         testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
         testImplementation 'io.projectreactor:reactor-test'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+        //implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
         testCompileOnly  "org.projectlombok:lombok:${lombokVersion}"
@@ -41,6 +40,7 @@ subprojects {
         }
     }
 
+    //compileJava.dependsOn validateStructure
     test.finalizedBy(project.tasks.jacocoTestReport)
 
     jacocoTestReport {

@@ -1,5 +1,6 @@
 package com.helpcenter.asset.model;
 
+import com.helpcenter.assignee.model.Assignee;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +16,7 @@ public class AbstractAsset extends Asset {
     private Date expiresAt;
 
     @Builder(builderMethodName = "abstractAssetBuilder")
-    public AbstractAsset(String assetId, String assignee, String acquiredAt, String bill, String description, String status, String url, String supplier, Date expiresAt) {
+    public AbstractAsset(String assetId, Assignee assignee, String acquiredAt, String bill, String description, String status, String url, String supplier, Date expiresAt) {
         super(assetId, assignee, acquiredAt, bill, description, status);
         this.url = url;
         this.supplier = supplier;

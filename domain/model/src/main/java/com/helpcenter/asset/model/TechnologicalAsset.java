@@ -1,11 +1,10 @@
 package com.helpcenter.asset.model;
 
+import com.helpcenter.assignee.model.Assignee;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -19,7 +18,7 @@ public class TechnologicalAsset extends Asset {
     private String expiresAt;
 
     @Builder(builderMethodName = "technologicalAssetBuilder")
-    public TechnologicalAsset(String assetId, String assignee, String acquiredAt, String bill, String description, String status, String brand, String location, String detail, String warranty, String expiresAt) {
+    public TechnologicalAsset(String assetId, Assignee assignee, String acquiredAt, String bill, String description, String status, String brand, String location, String detail, String warranty, String expiresAt) {
         super(assetId, assignee, acquiredAt, bill, description, status);
         this.brand = brand;
         this.location = location;

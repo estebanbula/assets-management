@@ -1,11 +1,10 @@
 package com.helpcenter.asset.model;
 
+import com.helpcenter.assignee.model.Assignee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -14,7 +13,7 @@ import java.util.Date;
 public abstract class Asset {
 
     private String assetId;
-    private String assignee;
+    private Assignee assignee;
     private String acquiredAt;
     private String bill;
     private String description;

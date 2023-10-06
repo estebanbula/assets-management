@@ -1,10 +1,9 @@
 package com.helpcenter.asset.model;
 
+import com.helpcenter.assignee.model.Assignee;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @Getter
 @NoArgsConstructor
@@ -14,10 +13,10 @@ public class FurnitureAsset extends Asset {
     private String location;
     private Integer quantity;
     private String detail;
-    private String maintainer;
+    private Assignee maintainer;
 
     @Builder(builderMethodName = "furnitureAssetBuilder")
-    public FurnitureAsset(String assetId, String assignee, String acquiredAt, String bill, String description, String status, String manufacturer, String location, Integer quantity, String detail, String maintainer) {
+    public FurnitureAsset(String assetId, Assignee assignee, String acquiredAt, String bill, String description, String status, String manufacturer, String location, Integer quantity, String detail, Assignee maintainer) {
         super(assetId, assignee, acquiredAt, bill, description, status);
         this.manufacturer = manufacturer;
         this.location = location;
